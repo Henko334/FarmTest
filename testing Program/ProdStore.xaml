@@ -1,0 +1,54 @@
+﻿<Page xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="testing_Program.ProdStore"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:testing_Program"
+      xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" 
+      d:DesignWidth="1366"
+      Title="Product Store"
+      Background="White"
+      syncfusionskin:SfSkinManager.Theme="{syncfusionskin:SkinManagerExtension ThemeName=Lime}"
+      FontFamily="{StaticResource Mulish}">
+
+    <Page.Resources>
+        <Style TargetType="Syncfusion:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="{StaticResource Mulish}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#466D1d"/>
+        </Style>
+    </Page.Resources>
+    
+    <Border>
+        <Syncfusion:TabControlExt TabItemHeaderStyle="Curve" FontSize="14" TabListContextMenuOptions="None" CloseButtonType="Hide"  EnableLabelEdit="False" AllowDragDrop="False" IsNewButtonEnabled="False">
+            <Syncfusion:TabItemExt Header="Products">
+                <Syncfusion:SfDataGrid Margin="5" ColumnSizer="Star" HeaderRowHeight="25" FontSize="10" HeaderStyle="{StaticResource headerStyle}" FontFamily="{StaticResource Mulish}">
+                    <Syncfusion:SfDataGrid.Columns>
+                        <Syncfusion:GridTextColumn HeaderText="Product Type" />
+                        <Syncfusion:GridTextColumn HeaderText="Item Name"/>
+                        <Syncfusion:GridTextColumn HeaderText="Active Ingredient"/>
+                        <Syncfusion:GridTextColumn HeaderText="Reg No"/>
+                        <Syncfusion:GridTextColumn HeaderText="Supplier"/>
+                        <Syncfusion:GridTextColumn HeaderText="Volume"/>
+                        <Syncfusion:GridTextColumn HeaderText="Date Purchased"/>
+                        <Syncfusion:GridTextColumn HeaderText="Expiry Date"/>
+                    </Syncfusion:SfDataGrid.Columns>
+                </Syncfusion:SfDataGrid>
+            </Syncfusion:TabItemExt>
+            <Syncfusion:TabItemExt Header="Add Stock">
+                
+            </Syncfusion:TabItemExt>
+            <Syncfusion:TabItemExt Header="Stock">
+                
+            </Syncfusion:TabItemExt>
+            <Syncfusion:TabItemExt Header="Purchase">
+                
+            </Syncfusion:TabItemExt>
+            <Grid>
+            </Grid>
+        </Syncfusion:TabControlExt>
+    </Border>
+</Page>

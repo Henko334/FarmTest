@@ -1,0 +1,149 @@
+﻿<Page xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="testing_Program.Blocks"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:testing_Program"
+      xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" 
+      d:DesignWidth="1366"
+      Title="Blocks"
+      Background="White"
+      syncfusionskin:SfSkinManager.Theme="{syncfusionskin:SkinManagerExtension ThemeName=Lime}"
+      FontFamily="{StaticResource Mulish}">
+
+    <Page.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Padding" Value="2"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Grid.ColumnSpan" Value="1"/>
+        </Style>
+
+        <Style TargetType="Syncfusion:GridHeaderCellControl" x:Key="headerStyle">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="{StaticResource Mulish}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#466D1d"/>
+        </Style>
+    </Page.Resources>
+    
+    
+    <Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="65"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="0" Margin="3" BorderThickness="2" CornerRadius="15" BorderBrush="#466D1d">
+                <Syncfusion:SfDataGrid x:Name="grdBlocks" 
+                                       Margin="5"
+                                       SelectionChanged="OnSelectionChanged"
+                                       HeaderStyle="{StaticResource headerStyle}"
+                                       AlternationCount="1"
+                                       ColumnSizer="Star" 
+                                       BorderThickness="0"
+                                       AutoGenerateColumns="False"
+                                       SelectionMode="Extended" 
+                                       AllowSorting="True" 
+                                       AllowResizingColumns="True"
+                                       FontFamily="{StaticResource Mulish}">
+                    <Syncfusion:SfDataGrid.Columns>
+                        <Syncfusion:GridTextColumn HeaderText="BlockID" MappingName="BlockID" Width="60" IsHidden="True"/>
+                        <Syncfusion:GridTextColumn HeaderText="Block Name" MappingName="BlockName"/>
+                        <Syncfusion:GridNumericColumn HeaderText="Block Size" MappingName="Size"/>
+                        <Syncfusion:GridTextColumn HeaderText="Block Type" MappingName="BlockType"/>
+                        <Syncfusion:GridTextColumn HeaderText="Fruit Type" MappingName="FruitType"/>
+                        <Syncfusion:GridTextColumn HeaderText="Cultivar" MappingName="Variant"/>
+                    </Syncfusion:SfDataGrid.Columns>
+                </Syncfusion:SfDataGrid>
+            </Border>
+            <Border Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" BorderBrush="#466D1d" BorderThickness="2" CornerRadius="15" Margin="3">
+                        <Syncfusion:TabControlExt CloseButtonType="Hide">
+                            <Syncfusion:TabItemExt Header="Orchard/Vineyard">
+                                <Grid Margin="3" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="100"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Content="Block Name:" Margin="2"/>
+                                    <Label Grid.Row="0" Grid.Column="2" Content="Block Size (ha):" HorizontalContentAlignment="Right" Margin="2"/>
+                                    <Label Grid.Row="1" Content="Fruit Type:" Margin="2"/>
+                                    <Label Grid.Row="1" Grid.Column="2" Content="Cultivar:" HorizontalContentAlignment="Right" Margin="2"/>
+                                    <Label Grid.Row="2" Grid.Column="0" Content="Planting Date:" Margin="2"/>
+                                    <Label Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" Content="Age:" Margin="2"/>
+                                    <Label Grid.Row="3" Content="Block Manager:" Margin="2"/>
+                                    <Label Grid.Row="4" Grid.Column="0" Content="Plant Spacing:" Margin="2"/>
+                                    <Label Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right" Content="Row Spacing:" Margin="2"/>
+                                    <Label Grid.Row="5" Content="Plants:" Margin="2"/>
+                                    <Label Grid.Row="6" Content="BlockID:" Margin="2"/>
+
+                                    <TextBox x:Name="txtBlock" Grid.Column="1" Margin="2"/>
+                                    <TextBox x:Name="txtSize" Grid.Column="3" LostFocus="txtSize_FocusLost" Margin="2"/>
+                                    <Syncfusion:ComboBoxAdv x:Name="cboFruit" Grid.Column="1" Grid.Row="1" DisplayMemberPath="FruitName" SelectedValuePath="FruitID" SelectionChanged="cboFruitChange" Margin="2"/>
+                                    <Syncfusion:ComboBoxAdv x:Name="cboVar" Grid.Column="3" Grid.Row="1" DisplayMemberPath="VarName" SelectedValuePath="VarID" Margin="2"/>
+                                    <DatePicker x:Name="dtpPlant" Grid.Row="2" Grid.Column="1" SelectedDateChanged="DatePicker_SelectedDateChanged" Margin="2"/>
+                                    <TextBox x:Name="txtAge" Grid.Row="2" Grid.Column="3" IsReadOnly="True" Margin="2"/>
+                                    <Syncfusion:ComboBoxAdv Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="2"/>
+                                    <TextBox x:Name="txtPspace" Grid.Row="4" Grid.Column="1" LostFocus="txtPsapce_FocusLost" Margin="2"/>
+                                    <TextBox x:Name="txtRspace" Grid.Row="4" Grid.Column="3" LostFocus="txtRspace_FocusLost" Margin="2"/>
+                                    <TextBox x:Name="txtPlants" IsReadOnly="True" Grid.Row="5" Grid.Column="1" Margin="2"/>
+                                    <TextBox x:Name="txtBlockID" IsReadOnly="True" Grid.Row="6" Grid.Column="1" Margin="2"/>
+
+                                    <Button x:Name="btnSave" Content="Save" Grid.Column="0" Grid.Row="7" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnSaveClicked"/>
+                                </Grid>
+                            </Syncfusion:TabItemExt>
+                            <Syncfusion:TabItemExt Header="Field Crops">
+                                
+                            </Syncfusion:TabItemExt>
+                        </Syncfusion:TabControlExt>
+                    </Border>
+                    <Border Grid.ColumnSpan="5" Grid.Row="1" BorderThickness="2" BorderBrush="#466D1d" Margin="3" CornerRadius="15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border CornerRadius="14,14,0,0" Background="#466D1d">
+                                <Label Content="History" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Top" FontSize="16" FontFamily="{StaticResource Mulish}"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Height="35" VerticalAlignment="Top" Margin="5">
+                <Button x:Name="btnAdd"  Content="Add New Block" Click="btnAddBlock_Clicked"/>
+            </Border>
+        </Grid>
+    </Border>
+</Page>

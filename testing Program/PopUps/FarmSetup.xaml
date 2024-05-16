@@ -1,0 +1,48 @@
+﻿<syncfusion:ChromelessWindow x:Class="testing_Program.PopUps.FarmSetup"
+                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                             xmlns:local="clr-namespace:testing_Program.PopUps"
+                             xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+                             xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
+                             mc:Ignorable="d"
+                             Title="Farm Setup" 
+                             Height="300"
+                             Width="500"
+                             ResizeMode="NoResize"
+                             TitleBarBackground="#a8ca43"
+                             AllowsTransparency="True"
+                             WindowStartupLocation="CenterScreen"
+                             TitleTextAlignment="Center"
+                             CornerRadius="8"
+                             syncfusionskin:SfSkinManager.Theme="{syncfusionskin:SkinManagerExtension ThemeName=Lime}"
+                             FontFamily="{StaticResource Mulish}">
+    
+    <syncfusion:TabControlExt CloseButtonType="Hide" IsNewButtonEnabled="False" TabScrollButtonVisibility="Hidden" AllowDragDrop="False" TabListContextMenuOptions="None">
+        <syncfusion:TabItemExt Header="Farms">
+            <Border CornerRadius="10" BorderThickness="1" BorderBrush="#466D1d">
+                <syncfusion:SfDataGrid Margin="2,5,2,5" BorderThickness="0" ColumnSizer="Star" AddNewRowPosition="Bottom" AllowEditing="True" AllowSorting="False">  
+                    <syncfusion:SfDataGrid.Columns>
+                        <syncfusion:GridTextColumn HeaderText="FarmID" MappingName="FarmID"/>
+                        <syncfusion:GridTextColumn HeaderText="Name" MappingName="Name"/>
+                        <syncfusion:GridTextColumn HeaderText="Manager" MappingName="Manager"/>
+                        <syncfusion:GridTextColumn HeaderText="Storage" MappingName="Storage"/>
+                    </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </Border>
+        </syncfusion:TabItemExt>
+        <syncfusion:TabItemExt Header="Storages">
+            <Border>
+                <syncfusion:SfDataGrid Margin="2,5,2,5" BorderThickness="0" ColumnSizer="Star" AddNewRowPosition="Bottom" AllowEditing="True" AllowSorting="False">
+                    <syncfusion:SfDataGrid.Columns  >
+                        <syncfusion:GridTextColumn HeaderText="FarmID" MappingName="FarmID"/>
+                        <syncfusion:GridTextColumn HeaderText="Name" MappingName="Name"/>
+                        <syncfusion:GridTextColumn HeaderText="Manager" MappingName="Manager"/>
+                        <syncfusion:GridTextColumn HeaderText="Storage" MappingName="Storage"/>
+                    </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+            </Border>
+        </syncfusion:TabItemExt>
+    </syncfusion:TabControlExt>
+</syncfusion:ChromelessWindow>

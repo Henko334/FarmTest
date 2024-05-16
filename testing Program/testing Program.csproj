@@ -1,0 +1,146 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>testing_Program</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Mulish.ttf" />
+    <None Remove="medium.png" />
+    <None Remove="Resources\bar.png" />
+    <None Remove="Resources\chemicals.png" />
+    <None Remove="Resources\dark.png" />
+    <None Remove="Resources\day-mode.png" />
+    <None Remove="Resources\error.png" />
+    <None Remove="Resources\farming.png" />
+    <None Remove="Resources\farmsetup.png" />
+    <None Remove="Resources\field.png" />
+    <None Remove="Resources\house.png" />
+    <None Remove="Resources\info.png" />
+    <None Remove="Resources\insecticide.png" />
+    <None Remove="Resources\light.png" />
+    <None Remove="Resources\Montserrat.ttf" />
+    <None Remove="Resources\night-mode.png" />
+    <None Remove="Resources\orchard.png" />
+    <None Remove="Resources\pestcontrol.png" />
+    <None Remove="Resources\pesticide.png" />
+    <None Remove="Resources\pests.png" />
+    <None Remove="Resources\settings.png" />
+    <None Remove="Resources\smart.png" />
+    <None Remove="Resources\smart2.png" />
+    <None Remove="Resources\tractor.png" />
+    <None Remove="Resources\warning.png" />
+    <None Remove="Resources\weather.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Geocoding.Core" Version="4.0.1" />
+    <PackageReference Include="Geocoding.Google" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+    <PackageReference Include="Syncfusion.Grid.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.Grouping.Base" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.Licensing" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.OlapGrid.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.OlapShared.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.PivotTable.Wpf" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.SfBusyIndicator.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.SfChart.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.SfGrid.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.SfInput.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.SfRadialMenu.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.SfRichTextBoxAdv.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.SfSkinManager.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.Shared.Base" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.Shared.WPF" Version="25.1.41" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="25.1.41" />
+    <PackageReference Include="syncfusion.ui.wpf.net" Version="25.1.41" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Mulish.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\bar.png" />
+    <Resource Include="Resources\chemicals.png" />
+    <Resource Include="Resources\dark.png" />
+    <Resource Include="Resources\day-mode.png" />
+    <Resource Include="Resources\error.png" />
+    <Resource Include="Resources\farming.png" />
+    <Resource Include="Resources\farmsetup.png" />
+    <Resource Include="Resources\field.png" />
+    <Resource Include="Resources\house.png" />
+    <Resource Include="Resources\insecticide.png" />
+    <Resource Include="Resources\light.png" />
+    <Resource Include="Fonts\Montserrat.ttf" />
+    <Resource Include="Resources\night-mode.png" />
+    <Resource Include="Resources\orchard.png" />
+    <Resource Include="Resources\pestcontrol.png" />
+    <Resource Include="Resources\pesticide.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\pests.png" />
+    <Resource Include="Resources\smart.png" />
+    <Resource Include="Resources\smart2.png" />
+    <Resource Include="Resources\tractor.png" />
+    <Resource Include="Resources\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\weather.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Methods\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="medium.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\info.png" />
+  </ItemGroup>
+
+</Project>

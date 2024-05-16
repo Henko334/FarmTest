@@ -1,0 +1,142 @@
+﻿<Page xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="testing_Program.WeatherScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:testing_Program"
+      xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" 
+      d:DesignWidth="1366"
+      Background="White"
+      syncfusionskin:SfSkinManager.Theme="{syncfusionskin:SkinManagerExtension ThemeName=Lime}"
+      FontFamily="{StaticResource Mulish}">
+
+    <Border>
+        <Grid x:Name="MainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" CornerRadius="15" Margin="3" BorderThickness="2" BorderBrush="#466D1d">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border CornerRadius="15,15,0,0" Grid.ColumnSpan="3" Background="#466D1d" BorderThickness="0" Grid.Row="0" VerticalAlignment="Top">
+                        <Label HorizontalContentAlignment="Center" Content="Current Weather" VerticalContentAlignment="Top" FontSize="14" Foreground="White"/>
+                    </Border>
+                    <Border Grid.Column="0" Grid.Row="1" BorderThickness="0" Background="WhiteSmoke" Margin="5" CornerRadius="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Temperature:" FontSize="16" VerticalContentAlignment="Stretch" VerticalAlignment="Center"/>
+                            <Label x:Name="lblTemp" Grid.Column="1"  Content="" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="1" BorderThickness="0" Background="WhiteSmoke" Margin="5" CornerRadius="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Humidity:" FontSize="16" VerticalContentAlignment="Stretch" VerticalAlignment="Center"/>
+                            <Label x:Name="lblHum" Grid.Column="1"  Content="" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="1" BorderThickness="0" Background="WhiteSmoke" Margin="5" CornerRadius="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".4*"/>
+                                <ColumnDefinition Width=".6*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Condition:" FontSize="16" VerticalContentAlignment="Stretch" VerticalAlignment="Center"/>
+                            <Label x:Name="lblcont" Grid.Column="1"  Content="" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+
+                    
+                    <Border Grid.Column="0" Grid.Row="2" BorderThickness="0" Background="WhiteSmoke" Margin="5" CornerRadius="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Cloud Cover:" FontSize="16" VerticalContentAlignment="Stretch" VerticalAlignment="Center"/>
+                            <Label x:Name="lblCloud" Grid.Column="1"  Content="" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="2" BorderThickness="0" Background="WhiteSmoke" Margin="5" CornerRadius="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Wind Speed:" FontSize="16" VerticalContentAlignment="Stretch" VerticalAlignment="Center"/>
+                            <Label x:Name="lblWind" Grid.Column="1"  Content="" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="2" BorderThickness="0" Background="WhiteSmoke" Margin="5" CornerRadius="15">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".6*"/>
+                                <ColumnDefinition Width=".4*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Wind Direction:" FontSize="16" VerticalContentAlignment="Stretch" VerticalAlignment="Center"/>
+                            <Label x:Name="lblDirect" Grid.Column="1"  Content="" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="1" Grid.Row="0" BorderThickness="2" BorderBrush="#466D1d" CornerRadius="15" Margin="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border CornerRadius="15,15,0,0" Background="#466D1d" BorderThickness="0" Grid.Row="0" VerticalAlignment="Top">
+                        <Label HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Week's Weather Forecast" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
+                    </Border>
+                    <Syncfusion:SfDataGrid Grid.Row="1" x:Name="grdWeather" Margin="10,0,10,5" ColumnSizer="Star" FontFamily="{StaticResource Mulish}" BorderThickness="0" GridLinesVisibility="None" HeaderLinesVisibility="None" AutoGenerateColumns="False">
+                        <Syncfusion:SfDataGrid.Columns>
+                            <Syncfusion:GridTextColumn HeaderText="Date" Width="80" MappingName="Date" TextAlignment="LEft"/>
+                            <Syncfusion:GridTextColumn HeaderText="Min Temp" MappingName="MinTemp" Width="80" TextAlignment="Center"/>
+                            <Syncfusion:GridTextColumn HeaderText="Max Temp" MappingName="MaxTemp" Width="80" TextAlignment="Center"/>
+                            <Syncfusion:GridTextColumn HeaderText="Weather Condition" MappingName="WeatherCondition" TextAlignment="Center"/>
+                            <Syncfusion:GridTextColumn HeaderText="Precipitaion Chance" MappingName="PrecipitationChance" TextAlignment="Center"/>
+                            <Syncfusion:GridTextColumn HeaderText="Total Precipitaion" MappingName="TotalPrecipitation" Width="140" TextAlignment="Center"/>
+                        </Syncfusion:SfDataGrid.Columns>
+                    </Syncfusion:SfDataGrid>
+                </Grid>
+            </Border>
+
+            <Syncfusion:SfChart x:Name="chart1" Grid.Row="1" Grid.ColumnSpan="2" Margin="3" AreaBorderThickness="1" Palette="GreenChrome">
+                <Syncfusion:SfChart.PrimaryAxis>
+                    <Syncfusion:CategoryAxis Header="Date" LabelFormat="{}{0:dd/MM}"/>
+                </Syncfusion:SfChart.PrimaryAxis>
+                <Syncfusion:SfChart.SecondaryAxis>
+                    <Syncfusion:NumericalAxis Header="Value"/>
+                </Syncfusion:SfChart.SecondaryAxis>
+                <Syncfusion:SfChart.Behaviors>
+                    <Syncfusion:ChartZoomPanBehavior EnableMouseWheelZooming="True" >
+                    </Syncfusion:ChartZoomPanBehavior>
+                </Syncfusion:SfChart.Behaviors>
+            </Syncfusion:SfChart>
+        </Grid>
+    </Border>
+</Page>
